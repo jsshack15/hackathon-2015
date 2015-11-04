@@ -16,10 +16,13 @@ class Hackathon(models.Model):
 		)
 	name = models.CharField(max_length = 200, blank = False)
 	email = models.EmailField(default = None, blank = False)
-	github = models.CharField(default = None, max_length = 200)
-	linkedin = models.CharField(default = None, max_length = 200)
+	github = models.URLField(default = None, max_length = 200)
+	linkedin = models.URLField(default = None, max_length = 200)
 	size = models.CharField(choices = SIZES, default = L, max_length = 5)
 	phone_number = models.PositiveIntegerField(blank = False)
+	mac_address = models.CharField(blank = False, max_length = 20, default = None)
+	hardware_required = models.TextField( blank = True, null = True)
+	# iot_required = models.BooleanField()
 
 class CodeMania(models.Model):
 	CSE = 'CSE'

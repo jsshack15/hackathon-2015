@@ -1,24 +1,36 @@
 from django.shortcuts import render
-from .forms import HackathonForm, CodeManiaForm
+from django.http import HttpResponse,JsonResponse
+from django.views import generic
 from django.views.generic.edit import FormView, CreateView
 from django.core.urlresolvers import reverse_lazy
+
+from hacks.models import Hackathon
+from hacks.forms import HackathonForm
+from .forms import HackathonForm, CodeManiaForm
+
+import json
+
 # Create your views here.
 
-class HackathonView(CreateView):
-	template_name = 'hackathon.html'
-	form_class = HackathonForm
-	success_url = '/'
+class HackathonView(generic.View):
+	def get(self, request):
+		form = HackathonForm
+		template_name = 'index.html'
+		return render(request, template_name)
 
-	def form_valid(self, form):
-		# This method is called when valid form data has been POSTed.
-		# It should return an HttpResponse.
-		# form.send_email()
-		return super(HackathonView, self).form_valid(form)
+	def post(self, request):
+		try:
+			f = HackathonForm(request.POST)
+			f.save()
+			return HttpResponse(json.dumps({"event":1}), content_type="application/json")
+		except Exception as e:
+			return HttpResponse(json.dumps(e), content_type="application/json")
 
-class CodeManiaView(CreateView):
-	template_name = 'codemania.html'
-	form_class = CodeManiaForm
-	success_url = '/'
+# class CodeManiaView(CreateView):
+# 	template_name = 'index.html'
+# 	form_class = CodeManiaForm
+# 	success_url = '/'
 
-	def form_valid(self, form):
-		return super(CodeManiaView, self).form_valid(form)
+# 	def form_valid(self, form):
+# 		return super(CodeManiaView, self).form_valid(form)
+

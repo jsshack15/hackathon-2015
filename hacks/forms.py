@@ -6,10 +6,6 @@ class HackathonForm(forms.ModelForm):
 		model = Hackathon
 		fields = '__all__'
 
-	def send_email(self):
-		# send email using the self.cleaned_data dictionary
-		pass
-
 class CodeManiaForm(forms.ModelForm):
 	class Meta:
 		model = CodeMania

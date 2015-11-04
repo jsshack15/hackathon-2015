@@ -15,7 +15,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -28,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 APP_DIR = os.path.join(BASE_DIR, 'hacks')
+TEMPLATE_DIR = os.path.join(BASE_DIR,'hackathon')
 # Application definition
 
 INSTALLED_APPS = (
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'hackathon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(APP_DIR, 'templates')],
+        'DIRS': [os.path.join(APP_DIR, 'templates'), os.path.join(TEMPLATE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,3 +101,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = (
+    os.path.join(TEMPLATE_DIR, "static"),
+)
+
