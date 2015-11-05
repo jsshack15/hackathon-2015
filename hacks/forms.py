@@ -10,6 +10,3 @@ class CodeManiaForm(forms.ModelForm):
 	class Meta:
 		model = CodeMania
 		fields = '__all__'
-
-	def send_email(self):
-		pass

@@ -44,8 +44,28 @@ class HackathonView(generic.View):
 		except Exception as e:
 			return HttpResponse(json.dumps(e), content_type="application/json")
 
-class CodeManiaView(CreateView):
-	template_name = 'codemania.html'
-	form_class = CodeManiaForm
-	# success_url = '/'
+class CodeManiaView(generic.View):
+	def get(self, request):
+		form = CodeManiaForm
+		template_name = 'codemania.html'
+		return render(request, template_name)
 
+	def post(self, request):
+		try:
+			f = CodeManiaForm(request.POST)
+			f.save()
+			plaintext = get_template('registration_email.txt')
+			htmly     = get_template('registration_email.html')
+
+			d = Context({ 'name': request.POST.get('name', None) })
+
+			subject, from_email, to = 'CodeMania-2015', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', request.POST.get('email', )
+			text_content = plaintext.render(d)
+			html_content = htmly.render(d)
+			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+			msg.attach_alternative(html_content, "text/html")
+			msg.send()
+			# send_mail('Hackathon-2015', 'Here is the message.', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', ['deshrajdry@gmail.com'], fail_silently=False)
+			return HttpResponse(json.dumps({"event":1}), content_type="application/json")
+		except Exception as e:
+			return HttpResponse(json.dumps(e), content_type="application/json")

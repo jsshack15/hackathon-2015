@@ -15,7 +15,7 @@ class Hackathon(models.Model):
 		(XXL, 'XXL')
 		)
 	name = models.CharField(max_length = 200, blank = False)
-	email = models.EmailField(default = None, blank = False)
+	email = models.EmailField(default = None, blank = False, primary_key = True)
 	github = models.URLField(default = None, max_length = 200)
 	linkedin = models.URLField(default = None, max_length = 200)
 	size = models.CharField(choices = SIZES, default = L, max_length = 5)
@@ -46,12 +46,10 @@ class CodeMania(models.Model):
 		(MT, 'Manufacturing Technology'),
 	)
 	name = models.CharField(max_length = 200)
-	email = models.EmailField(default = None, blank = False)
+	email = models.EmailField(default = None, blank = False, primary_key = True)
 	year = models.PositiveIntegerField(default = 1, blank = False)
-	phone_number = models.PositiveIntegerField(blank = False)
-	branch = models.CharField(
-		max_length = 5,
-		choices = BRANCH, 
-		default = CSE,
-		)
+	phone_number = models.CharField(blank = False, max_length = 10)
+	course = models.CharField(max_length = 10, blank = False, default = None)
+	branch = models.CharField( max_length = 5, null = True)
+	year = models.PositiveIntegerField(null = True)
 
