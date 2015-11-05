@@ -1,0 +1,1 @@
+Hello {{ name }} - your account is registered for hackathon 2015. this is just a dummy mail.

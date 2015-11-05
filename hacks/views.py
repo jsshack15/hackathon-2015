@@ -3,12 +3,18 @@ from django.http import HttpResponse,JsonResponse
 from django.views import generic
 from django.views.generic.edit import FormView, CreateView
 from django.core.urlresolvers import reverse_lazy
+from django.core.mail import send_mail
 
 from hacks.models import Hackathon
 from hacks.forms import HackathonForm
 from .forms import HackathonForm, CodeManiaForm
 
 import json
+
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
+from django.template import Context
+
 
 # Create your views here.
 
@@ -22,15 +28,24 @@ class HackathonView(generic.View):
 		try:
 			f = HackathonForm(request.POST)
 			f.save()
+			plaintext = get_template('registration_email.txt')
+			htmly     = get_template('registration_email.html')
+
+			d = Context({ 'name': request.POST.get('name', None) })
+
+			subject, from_email, to = 'Hackathon-2015', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', request.POST.get('email', )
+			text_content = plaintext.render(d)
+			html_content = htmly.render(d)
+			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+			msg.attach_alternative(html_content, "text/html")
+			msg.send()
+			# send_mail('Hackathon-2015', 'Here is the message.', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', ['deshrajdry@gmail.com'], fail_silently=False)
 			return HttpResponse(json.dumps({"event":1}), content_type="application/json")
 		except Exception as e:
 			return HttpResponse(json.dumps(e), content_type="application/json")
 
-# class CodeManiaView(CreateView):
-# 	template_name = 'index.html'
-# 	form_class = CodeManiaForm
-# 	success_url = '/'
-
-# 	def form_valid(self, form):
-# 		return super(CodeManiaView, self).form_valid(form)
+class CodeManiaView(CreateView):
+	template_name = 'codemania.html'
+	form_class = CodeManiaForm
+	# success_url = '/'
 
