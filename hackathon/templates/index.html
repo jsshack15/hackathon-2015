@@ -801,7 +801,7 @@ $('.registration-form').submit(function(event) {
 $.ajax({
     url:url,
     type:'POST',
-    data:obj
+    data:formData
   }).done(function(data){
     if(data.event == 1){
         form[0].reset();

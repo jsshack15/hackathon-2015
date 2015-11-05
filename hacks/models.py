@@ -21,7 +21,7 @@ class Hackathon(models.Model):
 	size = models.CharField(choices = SIZES, default = L, max_length = 5)
 	phone_number = models.PositiveIntegerField(blank = False)
 	mac_address = models.CharField(blank = False, max_length = 20, default = None)
-	hardware_required = models.TextField( blank = True, null = True)
+	hardware_required = models.TextField(null = True)
 	# iot_required = models.BooleanField()
 
 class CodeMania(models.Model):
