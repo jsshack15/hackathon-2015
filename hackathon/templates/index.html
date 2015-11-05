@@ -223,7 +223,7 @@
                             <div class="about_me_bottom">
                                 <div class="abt-me-text">
                                     <h2 style="color:#036">Aww Snap!!<br>Something went wrong.<br>
-                                        Well you can always <a href="">try again</a> until you succeed..!
+                                        It seems you have already registered for the Hackathon-2015.
                                     </h2>
                                 </div>
                                 <div class="clearfix"></div>
@@ -811,7 +811,7 @@ $.ajax({
     }
   })
   .error(function(xhr, error) {
-    console.debug(xhr.responseText);
+    // console.debug(xhr.responseText);
     $('#failure').hide().removeClass('hidden').slideDown('normal');    
   })
   .always(function() {
