@@ -73,7 +73,6 @@
                                                    <li><a href="#our-sports" class="scroll">The Schedule</a></li> 
                                                    <li><a href="#blog" class="scroll">The Challenges</a></li>
                                                    <li><a href="#faqs" class="scroll">The FAQs</a></li>
-                                                   <li><a href="#profile" class="scroll">The Rulebook</a></li>
                                                    <li><a href="#sports-flow" class="scroll">The Prizes</a></li>
                                                    <li><a href="#contact" class="scroll">Contact</a></li>
                                                </ul>
@@ -113,36 +112,29 @@
                     <div class="clearfix"></div>
                             </div>
                                                     </div>
-                    <div class="row helping">                           
-                    <p class="supporters">Helping Hands</p>
-                    <div class="col-md-2 col-xs-6">                    
-                        <img src="/static/images/gdg.png" class="img-responsive">
-                    </div>
-                    <div class="col-md-2 col-xs-6">                    
-                        <img src="/static/images/gdg.png" class="img-responsive">
-                    </div>
-                    
-                        <div class="clearfix"></div>
-                        <a href="javascript:" class="showRegisterForm btn btn-primary">Register</a>
+<div class="row helping">   
+                                            
+                           <a href="javascript:" class="showRegisterForm btn btn-primary">Register</a>
                         <div class="registerContainer hidden" style="overflow: hidden">                            
                             <h2 style="color:black">Register</h2>
-                            <div class="regForm col-md-6" id='reg-Form' width="100%" style="color:#036">
+                            <div class="regForm col-md-6 col-md-offset-3" id='reg-Form' width="100%" style="color:#036">
                                 <form action="" method="post" class="registration-form" onsubmit="return false;">
                                     {% csrf_token %}
-                                    <div class='form-group pad10'>
-                                        <span class="col-md-6">
+                                    
+                                    <div class='form-group col-md-6'>
                                             <label class="sr-only" for="name">Full name</label>
                                             <input type="text" name="name" placeholder="We can call you..." class="form-first-name form-control" id="name" required>
-                                        </span>
-                                        <span class="col-md-6">
+                                    </div>
+                                    <div class="form-group col-md-6">
                                             <label class="sr-only" for="email">Email</label>
                                             <input type="text" name="email" placeholder="Your Mailbox" class="form-email form-control" id="email" required>
-                                        </span>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="tel" class="form-control" name="phone_number" required pattern="[0-9]{10}">
                                         </div>
-                                    </div>
+                                    <div class="clearfix"></div>
+                                        <div class="form-group col-md-10">
+                                            <label  class="sr-only" for="contact">Phone Number</label>
+                                            <input type="tel" class="form-control" name="phone_number" required pattern="[0-9]{10}" placeholder="tring tring ! Your contact number.">
+                                        </div>
+                                    <div class="clearfix"></div>
                                     <div class='form-group pad10'>
                                         <span class="col-md-6">
                                             <label class="sr-only" for="github">Github Link</label>
@@ -154,8 +146,8 @@
                                             <input type="url" name="linkedin" placeholder="Your Linked In profile link" class="form-first-name form-control" id="linkedin" required>
                                         </span>
                                     </div>
-
-                                    <div class="t-shirt">
+<div class="clearfix"></div>
+                                    <div class="t-shirt ">
                                         <span>
                                             Your T-Shirt Size
                                         </span>
@@ -170,15 +162,14 @@
                                         </span>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-md-10">
                                         <input type="checkbox" placeholder="Your Linked In profile link" class="getHardware" id="hardware" value="yes">
                                         <label class="checkbox" for="hardware">Will you be needing extra hardware?</label>
                                     </div>
                                     <div id='iot' class="hidden">
                                         <div class="about_me_bottom">
                                             <div class="abt-me-text">
-                                                <h3>We have the following IOT devices: 
-
+                                                <h3 style="color:#036;">We have the following IOT devices: 
                                                 </h3>
                                                 <ul class='iotdev'>
                                                     <li>Arduino UNO</li>
@@ -195,15 +186,16 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <textarea name="hardware_required" class="form-first-name form-control" id="hard-req" resize='none' rows="4" style="height: 40%; resize: none"></textarea>
+                                            <textarea name="hardware_required" class="form-first-name form-control" id="hard-req" resize='none' rows="4" style="height: 40%; resize: none">List them separated by commas</textarea>
                                         </div>
 
 
                                     </div>
-                                        <div class="form-group">
-                                            <label>MAC Address</label>
-                                            <input type="text" class="form-control" name="mac_address" class="form-control" required> 
+                                    <div class="form-group pad10 col-md-10">
+                                        <label  class="sr-only">MAC Address</label>
+                                            <input type="text" class="form-control" name="mac_address" class="form-control" required placeholder="MAC Address"> 
                                         </div>
+<div class="clearfix"></div>
                                     <button type="submit" class="btn" id='gobutton'>Register!!</button>
                                 </form>
                             </div>
@@ -231,6 +223,22 @@
                         </div>
 
 
+                        
+                        
+                        
+                        
+                        
+                                            
+                   <p class="supporters">Helping Hands</p>
+                    <div class="col-md-3 col-xs-6">                    
+                        <img src="/static/images/nibble.png" class="img-responsive">
+                    </div>
+                    <div class="col-md-2 col-xs-6">                    
+                        <img src="/static/images/gdg.png" class="img-responsive">
+                    </div>
+                    
+                        <div class="clearfix"></div>
+                     
 
                     
                     
@@ -268,7 +276,7 @@
                         <h1>&lt; About The Event &gt;</h1>                 <div class="clearfix"></div>
                     </div>
                     <div class="about_me_bottom">
-                        <div class="abt-me-text"><h3>Strength lies in differences not in similarities.  JSS Hackathon  is an intra college event in which a
+                        <div class="abt-me-text"><h3>Strength lies in differences not in similarities.  JSS Hackathon  is an inter college event in which a
 
                             creative community of programmers , designers - from novices to the experienced , indolent to the 
 
@@ -297,7 +305,7 @@
                                 <div class="l_g">
                                     <div class="col-xs-6 ld-mr-grd">
                                         <div class="l_g_r">
-                                            <img src="/static/images/spf3.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
+                                            <img src="/static/images/register.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
                                             <div class="ld-mr-txt lft">
                                                 <h4>Registrations</h4>
                                                 <p>0800 hours</p>
@@ -306,7 +314,7 @@
                                     </div>
                                     <div class="col-xs-6 ld-mr-grd">
                                         <div class="l_g_r">
-                                            <img src="/static/images/spf2.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
+                                            <img src="/static/images/inaug.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
                                             <div class="ld-mr-txt rt">
                                                 <h4>Inauguration</h4>
                                                 <p>0900 hours</p>
@@ -320,7 +328,7 @@
                                 <div class="l_g">
                                     <div class="col-xs-6 ld-mr-grd">
                                         <div class="l_g_r">
-                                            <img src="/static/images/spf3.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
+                                            <img src="/static/images/tech.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
                                             <div class="ld-mr-txt lft padd">
                                                 <h4>Tech Talk</h4>
                                                 <p>0920 hours</p>
@@ -329,7 +337,7 @@
                                     </div>
                                     <div class="col-xs-6 ld-mr-grd">
                                         <div class="l_g_r">
-                                            <img src="/static/images/spf2.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
+                                            <img src="/static/images/begin.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
                                             <div class="ld-mr-txt rt">
                                                 <h4>Hackathon Begins</h4>
                                                 <p>1000 hours</p>
@@ -343,7 +351,7 @@
                                 <div class="l_g">
                                     <div class="col-xs-6 ld-mr-grd">
                                         <div class="l_g_r">
-                                            <img src="/static/images/spf3.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
+                                            <img src="/static/images/lunch.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
                                             <div class="ld-mr-txt lft">
                                                 <h4>Lunch</h4>
                                                 <p>
@@ -353,7 +361,7 @@
                                     </div>
                                     <div class="col-xs-6 ld-mr-grd">
                                         <div class="l_g_r">
-                                            <img src="/static/images/spf2.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
+                                            <img src="/static/images/snacks.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
                                             <div class="ld-mr-txt rt">
                                                 <h4>Tea and Snacks</h4>
                                                 <p>1700 hours</p>
@@ -367,31 +375,7 @@
                                 <div class="l_g">
                                     <div class="col-xs-6 ld-mr-grd">
                                         <div class="l_g_r">
-                                            <img src="/static/images/spf3.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
-                                            <div class="ld-mr-txt lft">
-                                                <h4>Hackathon Ends (Day-2)</h4>
-                                                <p>
-1000 hours</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 ld-mr-grd">
-                                        <div class="l_g_r">
-                                            <img src="/static/images/spf2.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
-                                            <div class="ld-mr-txt rt">
-                                                <h4>Prize Distribution</h4>
-                                                <p>1700 hours</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </li>
-                            <li style="display:list-item;">
-                                <div class="l_g">
-                                    <div class="col-xs-6 ld-mr-grd">
-                                        <div class="l_g_r">
-                                            <img src="/static/images/spf3.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
+                                            <img src="/static/images/dinner.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
                                             <div class="ld-mr-txt lft">
                                                 <h4>Dinner</h4>
                                                 <p>1900 hours</p>
@@ -406,6 +390,30 @@
                                                 <p>
 0800 hours
 </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                            <li style="display:list-item;">
+                                <div class="l_g">
+                                    <div class="col-xs-6 ld-mr-grd">
+                                        <div class="l_g_r">
+                                            <img src="/static/images/ends.jpg" alt="" class="img-circle spt-img-wid schedule-img" >
+                                            <div class="ld-mr-txt lft">
+                                                <h4>Hackathon Ends (Day-2)</h4>
+                                                <p>
+1000 hours</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 ld-mr-grd">
+                                        <div class="l_g_r">
+                                            <img src="/static/images/prize.jpg" alt="" class="img-circle spt-img-wid schedule-img schedule-img-r" >
+                                            <div class="ld-mr-txt rt">
+                                                <h4>Prize Distribution</h4>
+                                                <p>1200 hours</p>
                                             </div>
                                         </div>
                                     </div>
@@ -452,25 +460,8 @@
                         
                         <ul class="blg-gd-hd">
                             <li class="heading">The Game:</li>
-                            <li class="heading">Problem Statement: </li>
-                            <li class="para">- There is a board game played between two players. The board has nXn equal squares, where 8 &lt;= n &lt;= 15 (similar to a chess board).<br>
-- Only two kings will be placed on the board at the starting of the game (one at 1,1 and second at n,n position).<br>
-- The kings can move one square in any direction - up, down, to the sides, and diagonally, just like chess.<br>
-- Each square can be visited at-most once by either of the kings.
-- The king who gets killed, or is out of moves loses the game.
-What you need to do?<br>
--&gt; You need to write a bot, which can play the game on your behalf. And expose this bot as a web service.<br>
--&gt; Your web service should run on port 8080 and expose three APIs:<br>
-<br>
-URL Type Parameter Sample Response Purpose<br>
-
-/ping GET -- {ok: true} <br>
-To let us know that your bot server is alive <br>
-/start GET y,o,g {ok:true} For you to initialize the round. Here y 
-/play GET m {m:”1|2”} m : Move made by your opponent.<br>
-Note: By convention all positions are represented as x|y where x and y are respective coordinates on the board. Bottom left board is 1|1.<br>
-</li>
-        
+                            <li class="heading"></li>
+                            <li class="para">All might have played chess in their lifetime. Why not twist it a lil bit ?</br>Its time to defeat your opponent in an open challenge where you need to build an intelligent bot that can run on api calls. <br> Once done, its time to relax and watch your bot do the talking on your behalf in a graphic battlefield simulation.   
                             <li class="date">Expected to run on: WEB/MOBILE</li>
                         </ul>
                         
@@ -706,7 +697,7 @@ participants a feel of the competitive world in the industry.</li>
                     <div class="sports-flw-grids">
                         <div class="sports-flow-grid">
                             <div class=" spfone">
-                            <img src="/static/images/spf3.jpg" alt="" class="img-circle spt-img-wid">
+                            <img src="/static/images/winner.jpg" alt="" class="img-circle spt-img-wid">
                             </div>
                             <div class="position-box-left">
                                 <h4>Winner</h4>
@@ -715,7 +706,7 @@ participants a feel of the competitive world in the industry.</li>
                         </div>
                         <div class="sports-flow-grid">
                             <div class="spftwo">
-                            <img src="/static/images/spf5.jpg" alt="" class="img-circle spt-img-wid">
+                            <img src="/static/images/second.jpg" alt="" class="img-circle spt-img-wid">
                             </div>
                             <div class="position-box-right">
                                 <h4>First Runner Up</h4>
@@ -724,7 +715,7 @@ participants a feel of the competitive world in the industry.</li>
                         </div>
                         <div class="sports-flow-grid">
                             <div class=" spfone">
-                            <img src="/static/images/spf2.jpg" alt="" class="img-circle spt-img-wid">
+                            <img src="/static/images/third.jpg" alt="" class="img-circle spt-img-wid">
                             </div>
                             <div class="position-box-left">
                                 <h4>Second Runner Up</h4>
@@ -733,11 +724,11 @@ participants a feel of the competitive world in the industry.</li>
                         </div>
                         <div class="sports-flow-grid">
                             <div class="spftwo">
-                                <img src="/static/images/spf5.jpg" alt="" class="img-circle spt-img-wid">
+                                <img src="/static/images/bot.jpg" alt="" class="img-circle spt-img-wid">
                             </div>
                             <div class="position-box-right">
                                 <h4>Chess Bot</h4>
-                                <p>INR 8,000<br><strong>NOTE:</strong> The Competition will<br> be held only if<br> there are minimum<br> 10 teams participating.</p>
+                                <p>INR 5,000<br><strong>NOTE:</strong> The Competition will<br> be held only if<br> there are minimum<br> 10 teams participating.</p>
                             </div>
                         </div>
                         
@@ -753,7 +744,7 @@ participants a feel of the competitive world in the industry.</li>
                 <div class="container">
                     <ul class="contact" id="contact">
                         <li class="contact-hdn">Contact</li>
-                        <li class="contact-mail"><a href="mailto:mmil@jssaten.ac.in">mmil@jssaten.ac.in</a></li>
+                        <li class="contact-mail"><a href="mailto:mil@jssaten.ac.in">mil@jssaten.ac.in</a></li>
                         <li class="cont-number">Akash Tewari: +91-9971846461</li>
                         <li class="cont-number">Deshraj Yadav: +91-9555344456</li>
                         <li class="cont-number">Nikhil Verma: +91-7503705892</li>
@@ -761,8 +752,6 @@ participants a feel of the competitive world in the industry.</li>
                     <ul class="social">
                         <li><a href="#" class="fb"></a></li>
                         <li><a href="#" class="twit"></a></li>
-                        <li><a href="#" class="gpls"></a></li>
-                        <li><a href="#" class="drib"></a></li>
                     </ul>
                 </div>
                  <script type="text/javascript">
