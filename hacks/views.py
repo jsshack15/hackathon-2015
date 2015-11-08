@@ -14,6 +14,8 @@ import json
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.template import Context
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 # Create your views here.
@@ -42,7 +44,7 @@ class HackathonView(generic.View):
 
 			d = Context({ 'name': request.POST.get('name', None) })
 
-			subject, from_email, to = 'Hackathon-2015', 'Hackathon 2015<mmil@jssaten.ac.in>', request.POST.get('email', )
+			subject, from_email, to = 'JSS Hackathon 2015', 'Hackathon 2015<mmil@jssaten.ac.in>', request.POST.get('email', )
 			text_content = plaintext.render(d)
 			html_content = htmly.render(d)
 			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
@@ -73,7 +75,7 @@ class CodeManiaView(generic.View):
 
 			d = Context({ 'name': name})
 
-			subject, from_email, to = 'CodeMania-2015', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', email
+			subject, from_email, to = 'CodeMania-2015', 'Hackathon 2015 <mmil@jssaten.ac.in>', email
 			text_content = plaintext.render(d)
 			html_content = htmly.render(d)
 			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
@@ -83,3 +85,17 @@ class CodeManiaView(generic.View):
 			return HttpResponse(json.dumps({"event":1}), content_type="application/json")
 		except Exception as e:
 			return HttpResponse(json.dumps(e), content_type="application/json")
+
+def handler404(request):
+	response = render_to_response('404.html', {},
+								  context_instance=RequestContext(request))
+	response.status_code = 404
+	return response
+
+
+def handler500(request):
+	response = render_to_response('500.html', {},
+								  context_instance=RequestContext(request))
+	response.status_code = 500
+	return response
+
