@@ -1,1 +1,9 @@
-Hello {{ name }} - You have successfully registered for the Hackathon-2015. We will be filtering participants on the basis of Github and linkedin very soon. 
+Hi {{ name }}, we are glad that people like you are interested in creating a some new product.
+
+Thank you from the JSS-Hackathon 2015 team!
+
+What next?
+
+We have limited capacity at the JSS Hackathon 2015, November 21 - 22, 2015, so our team will carefully review your application based on your previous experience with open source contributions, hackathons, technical skills and accomplishments as listed on LinkedIn.
+
+You’ll hear from us shortly after we complete the review process. Please wait to hear from us. Keep in touch via Official website and Facebook until then.

@@ -1,0 +1,13 @@
+
+
+Hi {{ name }}, we are glad that people like you are interested in CodeMania 2015.
+
+Thank you for participating.
+
+What next?
+
+Brush up your programming skills for this event and come prepared. The event is of 4 hours on 18th November 2015. Please find more details on the http://hackathon.jssaten.ac.in/codemania
+
+Note: If you are interested in participating to the Hackathon 2015 then go ahead and apply on the website. The event is going to be a great success and do join us. You can win lot of prizes and t-shirts etc. Looking forward for your application.
+
+Keep in touch via Official website and Facebook until then.

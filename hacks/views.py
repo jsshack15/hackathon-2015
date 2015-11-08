@@ -61,18 +61,24 @@ class CodeManiaView(generic.View):
 
 	def post(self, request):
 		try:
-			f = CodeManiaForm(request.POST)
-			f.save()
-			# plaintext = get_template('registration_email.txt')
-			# htmly     = get_template('registration_email.html')
-			# d = Context({ 'name': request.POST.get('name', None) })
+			name = request.POST.get('name', None)
+			email = request.POST.get('email',None )
+			phone_number = request.POST.get('phone_number', None)
+			year = request.POST.get('year', None)
+			course= request.POST.get('course', None)
+			branch= request.POST.get('branch', None)
+			CodeMania.objects.create(name = name, email=email, phone_number=phone_number, year=year, course=course, branch = branch)
+			plaintext = get_template('codemania_registration_email.txt')
+			htmly     = get_template('codemania_registration_email.html')
 
-			# subject, from_email, to = 'CodeMania-2015', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', request.POST.get('email', )
-			# text_content = plaintext.render(d)
-			# html_content = htmly.render(d)
-			# msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-			# msg.attach_alternative(html_content, "text/html")
-			# msg.send()
+			d = Context({ 'name': name})
+
+			subject, from_email, to = 'CodeMania-2015', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', email
+			text_content = plaintext.render(d)
+			html_content = htmly.render(d)
+			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+			msg.attach_alternative(html_content, "text/html")
+			msg.send()
 			# send_mail('Hackathon-2015', 'Here is the message.', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', ['deshrajdry@gmail.com'], fail_silently=False)
 			return HttpResponse(json.dumps({"event":1}), content_type="application/json")
 		except Exception as e:
