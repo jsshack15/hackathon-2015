@@ -42,7 +42,7 @@ class HackathonView(generic.View):
 
 			d = Context({ 'name': request.POST.get('name', None) })
 
-			subject, from_email, to = 'Hackathon-2015', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', request.POST.get('email', )
+			subject, from_email, to = 'Hackathon-2015', 'Hackathon 2015<mmil@jssaten.ac.in>', request.POST.get('email', )
 			text_content = plaintext.render(d)
 			html_content = htmly.render(d)
 			msg = EmailMultiAlternatives(subject, text_content, from_email, [to])

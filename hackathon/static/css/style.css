@@ -1,9 +1,3 @@
-/*
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
-*/
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol, li{margin: 0; padding: 0;}
@@ -25,6 +19,9 @@ section::after {
 	content: '';
 	pointer-events: none;
 }
+body{
+   font-family: 'Comfortaa';
+}
 section {
     padding: 0;
 /*    background: #2980b9;*/
@@ -43,6 +40,16 @@ svg {
     fill:  #003366;
     stroke:  #003366;
 }
+.t-shirt{
+    margin-top: 10px !important;
+}
+.checkbox{
+    display: inline-block !important;
+}
+.iotdev{
+    
+}
+
 .header {
     position: relative;
 }
@@ -60,6 +67,12 @@ svg#clouds {
     margin: auto;
     padding: 10% 0;
 }
+.regForm{
+    text-align: left;
+    margin-bottom: 5%;
+    margin-top: 4%;
+}
+
 .menu-bar{
     position: absolute;
     top:0%;
@@ -338,6 +351,17 @@ ul#myList {
     padding-bottom: 7%;
     padding-left: 5%;
 }
+
+.helping a{
+    padding: 1% 5%;
+    background-color:   #036 !important;
+}
+
+.helping a:hover, .helping a:active{
+    background-color: #222 !important;
+}
+
+
 
 /*--blog-box--*/
 svg:not(:root) {
