@@ -21,7 +21,7 @@ class Hackathon(models.Model):
 	size = models.CharField(default = None, max_length = 5)
 	phone_number = models.CharField(max_length = 13)
 	mac_address = models.CharField(blank = False, max_length = 20, default = None)
-	hardware_required = models.TextField(null = True)
+	hardware_required = models.TextField(null = True, blank = True)
 	# iot_required = models.BooleanField()
 
 class CodeMania(models.Model):
@@ -47,7 +47,7 @@ class CodeMania(models.Model):
 	)
 	name = models.CharField(max_length = 200)
 	email = models.EmailField(default = None, blank = False, primary_key = True)
-	phone_number = models.CharField(blank = False, max_length = 10)
+	phone_number = models.CharField(max_length = 13)
 	year = models.CharField(max_length = 10, default = None, null = True)
 	course = models.CharField(max_length = 10, blank = False, default = None)
 	branch = models.CharField( max_length = 5, null = True)
