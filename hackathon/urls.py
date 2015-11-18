@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from hacks.views import HackathonView, CodeManiaView
+from hacks.views import HackathonView, CodeManiaView, problems
 
 urlpatterns = [
 	url(r'^hackadmin/', include(admin.site.urls)),
 	url(r'^$', HackathonView.as_view(), name='hackathon'),
-	url(r'^codemania/$', CodeManiaView.as_view(), name='codemania')
+	url(r'^codemania/$', CodeManiaView.as_view(), name='codemania'),
+	url(r'^codemania/problems$',problems, name='home'),
 ]
 
 from django.conf.urls import (

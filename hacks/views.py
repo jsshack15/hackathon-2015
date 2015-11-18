@@ -99,3 +99,5 @@ def handler500(request):
 	response.status_code = 500
 	return response
 
+def problems(request):
+	return render_to_response('problems.html')

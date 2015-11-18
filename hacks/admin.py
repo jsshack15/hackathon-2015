@@ -4,7 +4,7 @@ from hacks.models import Hackathon, CodeMania
 
 
 class HackathonAdmin(admin.ModelAdmin):
-	list_display = ("name", "email", "phone_number", "github", "linkedin", "mac_address", "hardware_required")
+	list_display = ("name", "email", "phone_number", "github", "size", "linkedin", "mac_address", "hardware_required")
 
 
 class CodeManiaAdmin(admin.ModelAdmin):
