@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from hacks.views import HackathonView, CodeManiaView, problems, sendRSVP
+from hacks.views import HackathonView, CodeManiaView, problems, sendRSVP, RSVP
 
 urlpatterns = [
+	url(r'confirmation-email/(?P<uid>[0-9a-zA-Z\w.@+-,\' \'\';\'%{}\[\]]+)?', RSVP.as_view(), name='RSVP'),
 	url(r'^hackadmin/', include(admin.site.urls)),
 	url(r'^RSVP$', sendRSVP.as_view(), name='sendRSVP'),
 	url(r'^$', HackathonView.as_view(), name='hackathon'),

@@ -1,0 +1,22 @@
+Hi..
+
+We are glad to receive an overwhelming response from you guys. Kudos to you all.
+
+Congratulations !!!!
+
+You just got invited to one of the biggest events of JSS Academy Of Technical Education, Noida.
+Its in your hands to do the magic and make it a huge success.
+
+A small task for you before the doom's day. Just let us know if you'll be coming or not by clicking the link below before 10 A.M. 20th november 2015. 
+We'll get the things ready for you.
+
+Please take note of the following points before coming to the event: 
+
+	Please bring a valid id like Voter Id Card, Driving License or PAN Card
+	Try to bring some warm clothes with you because its getting really cold at night.
+
+Confirmation Link: http://hackathon.jssaten.ac.in/confirmation-email/{{ uid }}
+
+
+Get your gears ready !!
+See you soon

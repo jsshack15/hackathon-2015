@@ -52,3 +52,11 @@ class CodeMania(models.Model):
 	course = models.CharField(max_length = 10, blank = False, default = None)
 	branch = models.CharField( max_length = 5, null = True)
 
+class SendRSVP(models.Model):
+	email = models.EmailField(default = None, blank = False)
+	uid = models.CharField(max_length = 200, default = None)
+
+class RSVPConfirmation(models.Model):
+	sent_rsvp = models.ForeignKey(SendRSVP)
+	status = models.BooleanField(default = False)
+	college = models.CharField(default = None, max_length = 500)

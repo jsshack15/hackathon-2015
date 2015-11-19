@@ -1,5 +1,5 @@
 from django.contrib import admin
-from hacks.models import Hackathon, CodeMania
+from hacks.models import Hackathon, CodeMania, SendRSVP, RSVPConfirmation
 # Register your models here.
 
 
@@ -10,5 +10,13 @@ class HackathonAdmin(admin.ModelAdmin):
 class CodeManiaAdmin(admin.ModelAdmin):
 	list_display = ("name", "email", "phone_number", "course", "branch", "year")
 
+class SendRSVPAdmin(admin.ModelAdmin):
+	list_display = ("email", "uid")
+
+class RSVPConfirmationAdmin(admin.ModelAdmin):
+	list_display = ("sent_rsvp", "college", "status")
+
 admin.site.register(Hackathon, HackathonAdmin)
 admin.site.register(CodeMania, CodeManiaAdmin)
+admin.site.register(SendRSVP, SendRSVPAdmin)
+admin.site.register(RSVPConfirmation, RSVPConfirmationAdmin)
