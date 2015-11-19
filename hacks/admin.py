@@ -14,7 +14,10 @@ class SendRSVPAdmin(admin.ModelAdmin):
 	list_display = ("email", "uid")
 
 class RSVPConfirmationAdmin(admin.ModelAdmin):
-	list_display = ("sent_rsvp", "college", "status")
+	list_display = ("get_email", "college", "status")
+	def get_email(self, obj):
+		return obj.sent_rsvp.email
+	get_email.admin_order_field  = 'sent_rsvp'
 
 admin.site.register(Hackathon, HackathonAdmin)
 admin.site.register(CodeMania, CodeManiaAdmin)
