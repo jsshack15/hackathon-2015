@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RSVP form</title>
+</head>
+<body>
+<h2>Send RSVP Mails </h2>
+<form action="" method="post">
+	{% csrf_token %}
+	<textarea id="emails" name = "emails" placeholder="enter one email id in each line" rows = "20" cols="70"></textarea>
+	<br>
+	<button type="submit">Send mails to these participants</button>
+</form>
+</body>
+</html>
