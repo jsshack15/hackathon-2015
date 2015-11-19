@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from hacks.views import HackathonView, CodeManiaView, problems
+from hacks.views import HackathonView, CodeManiaView, problems, sendRSVP
 
 urlpatterns = [
 	url(r'^hackadmin/', include(admin.site.urls)),
+	url(r'^RSVP$', sendRSVP.as_view(), name='sendRSVP'),
 	url(r'^$', HackathonView.as_view(), name='hackathon'),
 	url(r'^codemania/$', CodeManiaView.as_view(), name='codemania'),
 	url(r'^codemania/problems$',problems, name='home'),

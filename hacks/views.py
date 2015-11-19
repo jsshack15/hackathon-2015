@@ -101,3 +101,43 @@ def handler500(request):
 
 def problems(request):
 	return render_to_response('problems.html')
+
+from django.contrib.auth.decorators import login_required
+
+class LoginRequiredMixin(object):
+	@classmethod
+	def as_view(cls, **initkwargs):
+		view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+		return login_required(view)
+
+class sendRSVP(LoginRequiredMixin, generic.View):
+	def get(self, request):
+		template_name = 'send_rsvp.html'
+		return render(request, template_name, )
+
+	def post(self, request):
+		emails = request.POST.get('emails', None)
+		emails = emails.replace('\r','')
+		emails = emails.split('\n')
+		plaintext = get_template('codemania_registration_email.txt')
+		htmly     = get_template('codemania_registration_email.html')
+
+		d = Context({ 'name': name})
+
+		subject, from_email, to = 'CodeMania-2015', 'Hackathon 2015 <mmil@jssaten.ac.in>', email
+		text_content = plaintext.render(d)
+		html_content = htmly.render(d)
+		msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+		msg.attach_alternative(html_content, "text/html")
+		msg.send()
+		# send_mail('Hackathon-2015', 'Here is the message.', 'Microsoft Mobile Innovation Lab <mmil@jssaten.ac.in>', ['deshrajdry@gmail.com'], fail_silently=False)
+		return HttpResponse(json.dumps({"event":1}), content_type="application/json")
+		print emails
+		pass
+
+class RSVP(generic.View):
+	def get(self, request, uuid = None):
+		pass
+
+	def post(self, request, uuid = None):
+		pass
